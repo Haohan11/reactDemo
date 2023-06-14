@@ -13,6 +13,7 @@ export default function AddressBook() {
     }, [])
 
     return (
+        // bootstrap 樣式需要額外在其他檔案引入
         <div className="container">
         <div className="row">
         <div className="col">
@@ -28,16 +29,17 @@ export default function AddressBook() {
                     </tr>
                 </thead>
                 <tbody>
-            {rows.map(row => 
-                <tr key={row['sid']}>
-                    <th scope="row">{row['sid']}</th>
-                    <td>{row['name']}</td>
-                    <td>{row['email']}</td>
-                    <td>{row['mobile']}</td>
-                    <td>{row['birthday']}</td>
-                    <td>{row['address']}</td>
-                </tr>
-            )}
+                { rows.map(row => 
+                    // react 輸出 array 需要給予 key 屬性值
+                    <tr key={row['sid']}>
+                        <td>{row['sid']}</td>
+                        <td>{row['name']}</td>
+                        <td>{row['email']}</td>
+                        <td>{row['mobile']}</td>
+                        <td>{row['birthday']}</td>
+                        <td>{row['address']}</td>
+                    </tr>
+                ) }
                 </tbody>
             </table>
         </div>
