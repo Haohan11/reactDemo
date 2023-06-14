@@ -5,6 +5,7 @@ export default function AddressBook() {
     
     useEffect(() => {
         (async () => {
+            // put your addressbook api url here
             const response = await fetch('http://localhost:3000/addressBook/getData')
             const data = await response.json()
             setRows(data.rows)
